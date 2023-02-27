@@ -1,0 +1,14 @@
+.env
+.idea
+.wttd
+.venv
+*.sqlite3
+*pyc
+__pycache__
+staticfiles
+.ipynb_checkpoints/
+.vscode
+htmlcov
+.coverage
+.pytest_cache
+data
