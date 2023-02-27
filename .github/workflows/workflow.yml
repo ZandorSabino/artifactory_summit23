@@ -24,7 +24,7 @@ jobs:
         JF_USER: ${{ secrets.JF_ENV_USER }}
         JF_PASSWORD: ${{ secrets.JF_ENV_PASSWORD }}
     - name: Run JFrog CLI
-    - run: |
+      run: |
         jf rt ping
         jf rt bce
         jf rt bag
