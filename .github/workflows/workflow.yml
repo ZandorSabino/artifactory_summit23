@@ -17,18 +17,21 @@ jobs:
       uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag demo_summit23:$(date +%s)
-    - name: Setup JFrog CLI
-      uses: jfrog/setup-jfrog-cli@v3.0.0
       env:
-        JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
-        JF_USER: ${{ secrets.JF_ENV_USER }}
-        JF_PASSWORD: ${{ secrets.JF_ENV_PASSWORD }}
         SECRET_KEY: '#f76rj$4*6h1r__0-a#rup!f&e&x9%a!g6bvh878dx3_2ayp)4'
         DEBUG: False
         ALLOWED_HOSTS: '*'
         POSTGRES_NAME: 'postgres'
         POSTGRES_USER: 'postgres'
         POSTGRES_PASSWORD: 'postgres'
+      
+    - name: Setup JFrog CLI
+      uses: jfrog/setup-jfrog-cli@v3.0.0
+      env:
+        JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
+        JF_USER: ${{ secrets.JF_ENV_USER }}
+        JF_PASSWORD: ${{ secrets.JF_ENV_PASSWORD }}
+        
     - name: Run JFrog CLI
       run: |
         jf rt ping
