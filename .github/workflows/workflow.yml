@@ -23,6 +23,12 @@ jobs:
         JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
         JF_USER: ${{ secrets.JF_ENV_USER }}
         JF_PASSWORD: ${{ secrets.JF_ENV_PASSWORD }}
+        SECRET_KEY: '#f76rj$4*6h1r__0-a#rup!f&e&x9%a!g6bvh878dx3_2ayp)4'
+        DEBUG: False
+        ALLOWED_HOSTS: '*'
+        POSTGRES_NAME: 'postgres'
+        POSTGRES_USER: 'postgres'
+        POSTGRES_PASSWORD: 'postgres'
     - name: Run JFrog CLI
       run: |
         jf rt ping
